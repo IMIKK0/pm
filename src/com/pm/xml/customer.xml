@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+	<struts>
+	<package name="customer" extends="struts-default" namespace="/">
+	      <action name="customerAction_*" class="com.pm.action.CustomerAction" method="{1}">
+	        <result name="findCustomer">/WEB-INF/jsp/kehu/kehu_main.jsp</result>
+	        <result name="toAdd">/WEB-INF/jsp/kehu/add_kehu.jsp</result>
+	        <result name="addCustomer" type="redirectAction">customerAction_findCustomer</result>
+	        <result name="findById">/WEB-INF/jsp/kehu/edit_kehu.jsp</result>
+	        <result name="editCustomer" type="redirectAction">customerAction_findCustomer</result>
+	        <result name="delCustomer" type="redirectAction">customerAction_findCustomer</result>
+	        <result name="search">/WEB-INF/jsp/kehu/kehu_search.jsp</result>
+	        <allowed-methods>findCustomer,toAdd,addCustomer,findById,editCustomer,delCustomer,search</allowed-methods>
+	      </action> 
+	  </package>
+	</struts>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+	<struts>
+	<package name="eaa" extends="struts-default" namespace="/">
+	      <action name="eaaAction_*" class="com.pm.action.EaaAction" method="{1}">
+	        <result name="findEaa">/WEB-INF/jsp/eaa/eaa_main.jsp</result>
+	        <result name="toAdd">/WEB-INF/jsp/eaa/addEaa.jsp</result>
+	        <result name="addEaa" type="redirectAction">eaaAction_findEaa</result>
+	        <result name="findById">/WEB-INF/jsp/eaa/editEaa.jsp</result>
+	        <result name="editEaa" type="redirectAction">eaaAction_findEaa</result>
+	        <result name="delEaa" type="redirectAction">eaaAction_findEaa</result>
+	        <result name="search">/WEB-INF/jsp/eaa/search.jsp</result>
+	        <allowed-methods>findEaa,toAdd,addEaa,findById,editEaa,delEaa,search</allowed-methods>
+	      </action> 
+	  </package>
+	</struts>

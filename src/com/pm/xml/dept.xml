@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="myDept" extends="struts-default" namespace="/">
+		<action name="deptAction" class="com.pm.action.DeptAction">			
+			 <result name="add">/WEB-INF/jsp/Dept/addDept.jsp</result>	
+			 <result name="save" type="redirectAction">deptAction!findAll</result>
+			 <result name="delete" type="redirectAction">deptAction!findAll</result>	
+			 <result name="getByid">/WEB-INF/jsp/Dept/updatedept.jsp</result>	
+			 <result name="update" type="redirectAction">deptAction!findAll</result>	
+			 <result name="findAll">/WEB-INF/jsp/Dept/dept_main.jsp</result>	
+			 <result name="searchDept">/WEB-INF/jsp/Dept/dept_main.jsp</result>					
+			<allowed-methods>save,delete,getByid,update,findAll,searchDept,add</allowed-methods>
+		</action>	
+	</package>	
+</struts>

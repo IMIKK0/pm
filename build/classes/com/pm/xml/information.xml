@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="myinformation" extends="struts-default" namespace="/">
+		<action name="informationAction" class="com.pm.action.InformationAction">			
+			<result name="addInformationsuccess" type="redirectAction">informationAction!findInformation</result>	
+			<result name="findInformation">/WEB-INF/jsp/Information/information.jsp</result>
+			<result name="deleteInformationsuccess" type="redirectAction">informationAction!findInformation</result>	
+			<result name="findTaskByid">/WEB-INF/jsp/Information/updateinformation.jsp</result>		
+			<result name="updateInformation" type="redirectAction">informationAction!findInformation</result>	
+			 <result name="findEmpName">/WEB-INF/jsp/Information/addinformation.jsp</result>	
+			<allowed-methods>add,addInformation,findInformation,deleteInformation,findInformationByid,updateInformation,findEmpName</allowed-methods>
+		</action>	
+	</package>	
+</struts>

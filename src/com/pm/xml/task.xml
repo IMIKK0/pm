@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="mytask" extends="struts-default" namespace="/">
+		<action name="taskAction" class="com.pm.action.TaskAction">	
+			<result name="findTaskByid">/WEB-INF/jsp/Task/updateTask.jsp</result>
+			<result name="updateTask" type="redirectAction">taskAction!findTask</result>
+			<result name="addtasksuccess" type="redirectAction">taskAction!findTask</result>
+			<result name="deletetasksuccess" type="redirectAction">taskAction!findTask</result>
+			<result name="findTask">/WEB-INF/jsp/Task/listTask.jsp</result>	
+			<result name="searchTask">/WEB-INF/jsp/Task/listTask.jsp</result>
+			<result name="findEmpName">/WEB-INF/jsp/Task/addTask.jsp</result>
+			
+			<!-- 验证码 --> 					
+			<allowed-methods>findEmpName,addTask,deleteTask,findTaskByid,findTask,updateTask,searchTask</allowed-methods>
+		</action>	
+		
+	</package>	
+</struts>

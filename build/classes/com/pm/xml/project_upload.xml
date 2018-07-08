@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="myproject_upload" extends="struts-default" namespace="/">
+		<action name="project_uploadfoAction" class="com.pm.action.Project_uploadAction">		
+			<result name="findAll">/WEB-INF/jsp/Project_upload/uploadfile.jsp</result>
+			<result name="insert_success">project_infoAction!findAll</result>	
+		   <result name="add">/WEB-INF/jsp/Project_upload/addfile.jsp</result>	
+		   <result type="stream">
+					<param name="inputName">downloadFile</param>
+					<param name="contentDisposition">attachment;filename=${filename}</param>
+			</result>			 
+			<allowed-methods>uploadFile,add,findAll</allowed-methods>
+		</action>	
+	</package>	
+</struts>

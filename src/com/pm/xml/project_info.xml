@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="myproject_info" extends="struts-default" namespace="/">
+		<action name="project_infoAction" class="com.pm.action.Project_infoAction">			
+			<result name="findEmpName">/WEB-INF/jsp/Project_info/addProject.jsp</result>	
+			<result name="addsuccess" type="redirectAction">project_infoAction!findProject_info</result>	
+			<result name="findAll">/WEB-INF/jsp/Project_info/project_info.jsp</result>
+			<result name="deletesuccess" type="redirectAction">project_infoAction!findProject_info</result>	
+			<result name="findProject_infoByid">/WEB-INF/jsp/Project_info/uptateProject.jsp</result>		
+			<result name="updatesuccess" type="redirectAction">project_infoAction!findProject_info</result>	   					
+			<allowed-methods>findEmpName,addProject_info,findAll,updateProject_info,findProject_infoByid,deleteProject_info,</allowed-methods>
+		</action>	
+	</package>	
+</struts>

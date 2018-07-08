@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+	<struts>
+	<package name="eaatype" extends="struts-default" namespace="/">
+	      <action name="eaatypeAction_*" class="com.pm.action.EaatypeAction" method="{1}">
+	        <result name="findEaatype">/WEB-INF/jsp/eaatype/type.jsp</result>
+	        <result name="toAdd">/WEB-INF/jsp/eaatype/addEaatype.jsp</result>
+	        <result name="addEaatype" type="redirectAction">eaatypeAction_findEaatype</result>
+	        <result name="findById">/WEB-INF/jsp/eaatype/editeaatype.jsp</result>
+	        <result name="editEaatype" type="redirectAction">eaatypeAction_findEaatype</result>
+	        <result name="delEaatype" type="redirectAction">eaatypeAction_findEaatype</result>
+	        <result name="search">/WEB-INF/jsp/eaatype/search.jsp</result>
+	        <allowed-methods>findEaatype,toAdd,addEaatype,findById,editEaatype,delEaatype,search</allowed-methods>
+	      </action> 
+	  </package>
+	</struts>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+	<package name="myemp" extends="struts-default" namespace="/">
+		<action name="empAction" class="com.pm.action.EmpAction">	
+			<result name="findEmpByid">/WEB-INF/jsp/Emp/updateemp.jsp</result>
+			<result name="updatesuccess" type="redirectAction">empAction!findEmp</result>
+			<result name="Empsuccess" type="redirectAction">empAction!findEmp</result>
+			<result name="deletesuccess" type="redirectAction">empAction!findEmp</result>
+			<result name="findEmp">/WEB-INF/jsp/Emp/emp.jsp</result>	
+			<result name="searchEmp">/WEB-INF/jsp/Emp/emp.jsp</result>
+			<result name="add">/WEB-INF/jsp/Emp/addEmp.jsp</result>
+			<result name="loginsuccess">/index.jsp</result>	
+			<result name="yzmsuccess">/login.jsp</result>	
+			<result name="Jurisdiction">/WEB-INF/jsp/Oter/404.jsp</result>		
+			<result name="findGeRen">/WEB-INF/jsp/Task/GeRen.jsp</result>						
+			<!-- 验证码 --> 					
+			<allowed-methods>add,addEmp,deleteEmp,updateEmp,findEmpByid,findEmp,searchEmp,login,yzm,findGeRen</allowed-methods>
+		</action>	
+		
+	</package>	
+</struts>
